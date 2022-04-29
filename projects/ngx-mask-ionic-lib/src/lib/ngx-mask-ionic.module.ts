@@ -4,12 +4,11 @@ import {
   initialConfig,
   NEW_CONFIG,
   optionsConfig
-  } from './config';
+} from './config';
 import { MaskApplierService } from './mask-applier.service';
 import { MaskDirective } from './mask.directive';
 import { MaskPipe } from './mask.pipe';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-
 
 @NgModule({
   providers: [MaskApplierService, MaskPipe],
@@ -17,7 +16,9 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
   declarations: [MaskDirective, MaskPipe]
 })
 export class NgxMaskIonicModule {
-  public static forRoot(configValue?: optionsConfig): ModuleWithProviders {
+  public static forRoot(
+    configValue?: optionsConfig
+  ): ModuleWithProviders<NgxMaskIonicModule> {
     return {
       ngModule: NgxMaskIonicModule,
       providers: [
@@ -38,7 +39,9 @@ export class NgxMaskIonicModule {
       ]
     };
   }
-  public static forChild(configValue?: optionsConfig): ModuleWithProviders {
+  public static forChild(
+    configValue?: optionsConfig
+  ): ModuleWithProviders<NgxMaskIonicModule> {
     return {
       ngModule: NgxMaskIonicModule
     };
